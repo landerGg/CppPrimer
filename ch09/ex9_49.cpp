@@ -30,3 +30,23 @@ int main()
 
     cout << longest_word << endl;
 }
+//i think it was not right;
+int main()
+{
+	ifstream ifs("data.txt");
+	if(!ifs) return -1;
+	string longest_word;
+	
+	for(string word;ifs>>word;){
+		string::size_type pos=0;
+		if((pos=word.find_first_not_of("aceimnorsuvwxz",pos))!=string::npos){
+		   	continue;
+		   }
+		else {
+			if(word.size() >longest_word.size() )
+			longest_word=word;
+		}
+		   
+	}
+	cout<<longest_word<<endl;
+}
